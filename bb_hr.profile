@@ -2,19 +2,19 @@
 
 function bb_hr_install_tasks($install_state) {
   return array(
-    'bb_set_default_language' => array(
+    'bb_hr_set_default_language' => array(
       'display_name' => 'Standaardtaal instellen',
       'display' => TRUE,
       'type' => 'normal',
       'run' => INSTALL_TASK_RUN_IF_NOT_COMPLETED,
     ),
-    'bb_add_homepage' => array(
+    'bb_hr_add_homepage' => array(
       'display_name' => 'Maak een homepage',
       'display' => TRUE,
       'type' => 'normal',
       'run' => INSTALL_TASK_RUN_IF_NOT_COMPLETED,
     ),
-    'bb_extra_configurations' => array(
+    'bb_hr_extra_configurations' => array(
       'display_name' => 'Extra configuraties',
       'display' => TRUE,
       'type' => 'normal',
