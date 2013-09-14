@@ -1,0 +1,86 @@
+name        = BrightBrain
+description = Basic BrightBrain Installation Profile
+core        = 7.x
+files[]     = bb.profile
+files[]     = bb.install
+
+; Core required
+dependencies[] = block
+dependencies[] = translation
+dependencies[] = field
+dependencies[] = field_sql_storage
+dependencies[] = file
+dependencies[] = filter
+dependencies[] = image
+dependencies[] = list
+dependencies[] = locale
+dependencies[] = menu
+dependencies[] = node
+dependencies[] = options
+dependencies[] = path
+dependencies[] = system
+dependencies[] = taxonomy
+dependencies[] = text
+dependencies[] = user
+
+; Core optional
+dependencies[] = contextual
+dependencies[] = comment
+dependencies[] = dashboard
+dependencies[] = dblog
+dependencies[] = field_ui
+dependencies[] = number
+dependencies[] = rdf
+dependencies[] = shortcut
+dependencies[] = update
+
+; Other
+dependencies[] = backup_migrate
+dependencies[] = block_class
+dependencies[] = libraries
+dependencies[] = menu_attributes
+dependencies[] = module_filter
+dependencies[] = clone
+dependencies[] = pathauto
+dependencies[] = entity
+dependencies[] = token
+
+; Administration
+dependencies[] = admin_menu
+dependencies[] = admin_menu_toolbar
+
+; Caching
+dependencies[] = blockcache_alter
+
+; CTools
+dependencies[] = ctools
+
+; Features
+dependencies[] = features
+
+; User Interface
+dependencies[] = autocomplete_deluxe
+dependencies[] = ckeditor
+dependencies[] = ckeditor_link
+dependencies[] = jquery_update
+dependencies[] = lightbox2
+
+; Media
+dependencies[] = imce
+
+
+; Devel
+dependencies[] = devel
+
+; Views
+dependencies[] = semanticviews
+dependencies[] = views
+dependencies[] = views_content_cache
+dependencies[] = views_ui
+
+; Fields
+dependencies[] = email
+dependencies[] = field_collection
+
+; Webform
+dependencies[] = webform
