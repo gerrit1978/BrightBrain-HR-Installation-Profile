@@ -1,8 +1,8 @@
-name        = BrightBrain
-description = Basic BrightBrain Installation Profile
+name        = BrightBrain HR
+description = BrightBrain HR Installation Profile
 core        = 7.x
-files[]     = bb.profile
-files[]     = bb.install
+files[]     = bb_hr.profile
+files[]     = bb_hr.install
 
 ; Core required
 dependencies[] = block
