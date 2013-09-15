@@ -1,5 +1,8 @@
 <?php
 
+/** 
+ * Implemnts hook_install_tasks
+ */
 function bb_hr_install_tasks($install_state) {
   return array(
     'bb_hr_set_default_language' => array(
@@ -23,6 +26,41 @@ function bb_hr_install_tasks($install_state) {
   );
 }
 
+/**
+ * Implements hook_form_FORM_ID_alter().
+ *
+ * Allows the profile to alter the site configuration form.
+ */
+function bb_hr_form_install_configure_form_alter(&$form, $form_state) {
+  // Add checkbox for example content.
+  $form['bb_hr'] = array(
+    '#type' => 'fieldset',
+    '#collapsible' => FALSE,
+    '#title' => t('BrightBrain HR Platform'),
+  );
+
+  $form['bb_hr']['bb_hr_demo_terms'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Installeer demo taxonomie-termen'),
+    '#description' => t('Dit installeert een aantal standaard mogelijkheden op vlak van diploma, werkdomein...'),
+    '#default_value' => FALSE,
+  );
+
+  $form['#submit'][] = 'bb_hr_install_configure_form_submit';
+}
+
+/**
+ * Submit function for the altered install_configure_form
+ */
+function bb_hr_install_configure_form_submit(&$form, &$form_state) {
+  // Set variable to install or not demo content.
+  variable_set('bb_hr_install_demo_terms', $form_state['values']['bb_hr_demo_terms']);
+}
+
+
+/** 
+ * Callback for task "set default language"
+ */
 function bb_hr_set_default_language(&$install_state) {
   // set Dutch as default language
   $languages = language_list();
@@ -30,6 +68,9 @@ function bb_hr_set_default_language(&$install_state) {
 }
 
 
+/**
+ * Callback for task "add homepage"
+ */
 function bb_hr_add_homepage(&$install_state) {
 
 	$bodytext = "Homepage";
@@ -57,6 +98,10 @@ function bb_hr_add_homepage(&$install_state) {
   variable_set('site_frontpage', 'node/1');
 }
 
+
+/**
+ * Callback for task "extra configurations
+ */
 function bb_hr_extra_configurations(&$install_state) {
 
   // extra variables to be set
