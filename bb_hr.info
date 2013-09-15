@@ -82,6 +82,7 @@ dependencies[] = views_ui
 
 ; Fields
 dependencies[] = email
+dependencies[] = field_group
 dependencies[] = field_collection
 
 ; Webform
