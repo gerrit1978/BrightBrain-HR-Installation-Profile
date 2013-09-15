@@ -17,6 +17,10 @@ function bb_hr_install_tasks($install_state) {
       'type' => 'normal',
       'run' => INSTALL_TASK_RUN_IF_NOT_COMPLETED,
     ),
+    'bb_hr_import_vocabularies_batch' => array(
+      'display_name' => 'Importeer termen voor job velden',
+      'type' => 'batch',
+    ),
     'bb_hr_extra_configurations' => array(
       'display_name' => 'Extra configuraties',
       'display' => TRUE,
@@ -98,9 +102,33 @@ function bb_hr_add_homepage(&$install_state) {
   variable_set('site_frontpage', 'node/1');
 }
 
+/**
+ * Callback for task "import terms"
+ */
+function bb_hr_import_vocabularies_batch() {
+  if (variable_get('bb_hr_install_demo_terms', FALSE)) {
+	  $batch = array(
+	    'title' => t('Importing taxonomy terms'),
+	    'operations' => array(
+	      array('bb_hr_import_vocabularies', array()),
+	    ),
+	    'finished' => 'bb_hr_import_vocabularies_finished',
+	    'title' => t('Import terms'),
+	    'init_message' => t('Starting import.'),
+	    'progress_message' => t('Processed @current out of @total.'),
+	    'error_message' => t('Recruiter vocabularies import batch has encountered an error.'),
+	    'file' => drupal_get_path('profile', 'bb_hr') . '/bb_hr.install_vocabularies.inc',
+	  );
+	  return $batch;
+  }
+  
+  variable_del('bb_hr_install_demo_terms');
+}
+
+
 
 /**
- * Callback for task "extra configurations
+ * Callback for task "extra configurations"
  */
 function bb_hr_extra_configurations(&$install_state) {
 
