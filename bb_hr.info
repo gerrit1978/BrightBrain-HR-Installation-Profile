@@ -85,7 +85,7 @@ dependencies[] = field_collection
 ; Webform
 dependencies[] = webform
 
-; BB HR
-dependencies[] = bb_hr_jobs
+; BB HR Features
+dependencies[] = bb_hr_job
 dependencies[] = bb_hr_recruiter
 dependencies[] = bb_hr_applicant
