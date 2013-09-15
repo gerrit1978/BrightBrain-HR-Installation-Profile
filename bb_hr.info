@@ -68,6 +68,8 @@ dependencies[] = lightbox2
 ; Media
 dependencies[] = imce
 
+; Taxonomy
+dependencies[] = taxonomy_csv
 
 ; Devel
 dependencies[] = devel
