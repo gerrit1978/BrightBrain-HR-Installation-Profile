@@ -90,5 +90,6 @@ dependencies[] = webform
 
 ; BB HR Features
 dependencies[] = bb_hr_job
+dependencies[] = bb_hr_job_search
 dependencies[] = bb_hr_recruiter
 dependencies[] = bb_hr_applicant
