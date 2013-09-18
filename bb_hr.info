@@ -93,6 +93,7 @@ dependencies[] = bb_hr_job
 dependencies[] = bb_hr_admin
 dependencies[] = bb_hr_recruiter
 dependencies[] = bb_hr_applicant
+dependencies[] = bb_hr_application
 dependencies[] = bb_hr_webmaster
 ; We can not make this a dependency (enable on install), otherwise block & facet settings are lost
 ; dependencies[] = bb_hr_job_search
