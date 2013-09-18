@@ -145,7 +145,4 @@ function bb_hr_extra_configurations(&$install_state) {
   variable_set('comment_webform', 0);
   variable_set('node_submitted_webform', 0);
   
-  // private file path
-  variable_set('file_private_path', 'sites/default/files/private');
-
 }
