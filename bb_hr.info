@@ -73,6 +73,7 @@ dependencies[] = taxonomy_csv
 
 ; Devel
 dependencies[] = devel
+dependencies[] = role_export
 
 ; Views
 dependencies[] = semanticviews
